@@ -1,0 +1,867 @@
+/* =========================================================================
+   SIOM - SMART INVENTORY & ORDER MANAGEMENT SYSTEM
+   Enterprise Dark Design System & High-Contrast Typography
+   ========================================================================= */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Base App Layout */
+html, body, .stApp {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+.main .block-container {
+    max-width: 1440px;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+}
+
+/* Scoped Paragraph & Body Text (Carefully targeted, avoiding BaseWeb and widget interference) */
+.main p {
+    color: #cbd5e1;
+    line-height: 1.55;
+}
+
+div[data-testid="stCaptionContainer"] p,
+.stCaption {
+    color: #94a3b8 !important;
+    font-size: 12.5px !important;
+}
+
+/* =========================================================================
+   1. TEXT INPUTS, TEXTAREAS, NUMBER & DATE INPUTS (HIGH-CONTRAST VISIBILITY)
+   ========================================================================= */
+
+/* Widget Labels: Crisp and 100% visible across all states */
+label[data-testid="stWidgetLabel"],
+label[data-baseweb="label"],
+div[data-testid="stWidgetLabel"] p,
+div[data-testid="stWidgetLabel"] span,
+.stTextInput label,
+.stSelectbox label,
+.stNumberInput label,
+.stTextArea label,
+.stDateInput label,
+.stMultiSelect label {
+    color: #f1f5f9 !important;
+    -webkit-text-fill-color: #f1f5f9 !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 5px !important;
+}
+
+/* Input Containers: Dark Charcoal/Black (#111111), clean border, smooth transitions */
+div[data-testid="stTextInput"] div[data-baseweb="input"],
+div[data-testid="stNumberInput"] div[data-baseweb="input"],
+div[data-testid="stDateInput"] div[data-baseweb="input"],
+div[data-testid="stTextArea"] div[data-baseweb="textarea"],
+div[data-baseweb="input"],
+div[data-baseweb="base-input"],
+div[data-baseweb="textarea"] {
+    background-color: #111111 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 8px !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease !important;
+}
+
+/* Input Elements: Pure white entered text, white caret, dark charcoal background */
+div[data-testid="stTextInput"] input,
+div[data-testid="stNumberInput"] input,
+div[data-testid="stDateInput"] input,
+div[data-testid="stTextArea"] textarea,
+div[data-baseweb="input"] input,
+div[data-baseweb="base-input"] input,
+div[data-baseweb="textarea"] textarea {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border: none !important;
+    padding: 8px 12px !important;
+}
+
+/* Input Focus States: Subtle blue border (#3b82f6) and glowing focus indicator */
+div[data-testid="stTextInput"] div[data-baseweb="input"]:focus-within,
+div[data-testid="stNumberInput"] div[data-baseweb="input"]:focus-within,
+div[data-testid="stDateInput"] div[data-baseweb="input"]:focus-within,
+div[data-testid="stTextArea"] div[data-baseweb="textarea"]:focus-within,
+div[data-baseweb="input"]:focus-within,
+div[data-baseweb="base-input"]:focus-within,
+div[data-baseweb="textarea"]:focus-within {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35) !important;
+    background-color: #111111 !important;
+}
+
+div[data-testid="stTextInput"] input:focus,
+div[data-testid="stNumberInput"] input:focus,
+div[data-testid="stDateInput"] input:focus,
+div[data-testid="stTextArea"] textarea:focus,
+div[data-baseweb="input"] input:focus,
+div[data-baseweb="base-input"] input:focus,
+div[data-baseweb="textarea"] textarea:focus {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+    outline: none !important;
+}
+
+/* Placeholder Text: High-contrast light gray (#AAB4C3) */
+input::placeholder,
+textarea::placeholder,
+div[data-baseweb="input"] input::placeholder,
+div[data-baseweb="textarea"] textarea::placeholder {
+    color: #AAB4C3 !important;
+    -webkit-text-fill-color: #AAB4C3 !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+}
+
+/* Disabled Input States: Muted and clearly disabled while remaining legible */
+div[data-baseweb="input"]:has(input:disabled),
+div[data-baseweb="textarea"]:has(textarea:disabled),
+input:disabled,
+textarea:disabled {
+    background-color: #1a202c !important;
+    color: #94a3b8 !important;
+    -webkit-text-fill-color: #94a3b8 !important;
+    border-color: #2d3748 !important;
+    cursor: not-allowed !important;
+    opacity: 0.75 !important;
+}
+
+/* Number Input Step Buttons */
+div[data-testid="stNumberInput"] button {
+    background-color: #1e293b !important;
+    color: #cbd5e1 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 6px !important;
+}
+
+div[data-testid="stNumberInput"] button:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #3b82f6 !important;
+}
+
+/* Checkboxes and Radios */
+div[data-testid="stCheckbox"] label span,
+div[data-testid="stRadio"] label span {
+    color: #e2e8f0 !important;
+    -webkit-text-fill-color: #e2e8f0 !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+}
+
+/* =========================================================================
+   2. SELECTBOXES, MULTISELECTS & DROPDOWN MENUS
+   ========================================================================= */
+
+/* Select Trigger Control Box */
+div[data-baseweb="select"] > div:first-child,
+div[data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+div[data-testid="stMultiSelect"] div[data-baseweb="select"] > div {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    border: 1px solid #334155 !important;
+    border-radius: 8px !important;
+    min-height: 42px !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+/* Select Focus / Open State */
+div[data-baseweb="select"]:focus-within > div:first-child,
+div[data-testid="stSelectbox"] div[data-baseweb="select"]:focus-within > div,
+div[data-testid="stMultiSelect"] div[data-baseweb="select"]:focus-within > div {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35) !important;
+    background-color: #111111 !important;
+}
+
+/* Selected Value Text in Select Control */
+div[data-baseweb="select"] div[aria-selected="true"],
+div[data-baseweb="select"] div[class*="ValueContainer"] div,
+div[data-baseweb="select"] div[class*="singleValue"],
+div[data-baseweb="select"] span {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 500 !important;
+    font-size: 13.5px !important;
+}
+
+/* Select Placeholder Text */
+div[data-baseweb="select"] [data-placeholder="true"],
+div[data-baseweb="select"] div[class*="placeholder"],
+div[data-baseweb="select"] div:empty::before {
+    color: #AAB4C3 !important;
+    -webkit-text-fill-color: #AAB4C3 !important;
+    font-weight: 400 !important;
+}
+
+/* Dropdown Arrow & Action Icons */
+div[data-baseweb="select"] svg {
+    fill: #AAB4C3 !important;
+    color: #AAB4C3 !important;
+    transition: transform 0.15s ease, fill 0.15s ease !important;
+}
+
+div[data-baseweb="select"]:hover svg {
+    fill: #ffffff !important;
+}
+
+/* Dropdown Search Input Inside Combobox */
+div[data-baseweb="select"] input {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+    font-size: 13.5px !important;
+}
+
+/* Dropdown Options Popover Menu */
+div[data-baseweb="popover"],
+div[data-baseweb="menu"],
+ul[data-baseweb="menu"],
+ul[role="listbox"] {
+    background-color: #171f2e !important;
+    border: 1px solid #334155 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
+    padding: 6px !important;
+}
+
+/* Individual Option Items */
+li[role="option"],
+li[data-baseweb="menu-item"] {
+    background-color: transparent !important;
+    color: #f1f5f9 !important;
+    -webkit-text-fill-color: #f1f5f9 !important;
+    font-size: 13.5px !important;
+    padding: 9px 14px !important;
+    border-radius: 6px !important;
+    margin-bottom: 2px !important;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+/* Option Hover State */
+li[role="option"]:hover,
+li[role="option"][aria-selected="true"]:hover,
+li[data-baseweb="menu-item"]:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Option Selected State */
+li[role="option"][aria-selected="true"] {
+    background-color: rgba(37, 99, 235, 0.25) !important;
+    color: #60a5fa !important;
+    -webkit-text-fill-color: #60a5fa !important;
+    font-weight: 600 !important;
+}
+
+/* MultiSelect Tags / Chips */
+span[data-baseweb="tag"],
+div[data-baseweb="tag"] {
+    background-color: #1e293b !important;
+    border: 1px solid #3b82f6 !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+    padding: 2px 6px !important;
+}
+
+span[data-baseweb="tag"] span,
+div[data-baseweb="tag"] span {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+span[data-baseweb="tag"] svg,
+div[data-baseweb="tag"] svg {
+    fill: #cbd5e1 !important;
+}
+
+/* DatePicker Calendar Popover */
+div[data-baseweb="calendar"] {
+    background-color: #171f2e !important;
+    border: 1px solid #334155 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
+    color: #ffffff !important;
+}
+
+div[data-baseweb="calendar"] button {
+    color: #f1f5f9 !important;
+}
+
+div[data-baseweb="calendar"] button:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+/* =========================================================================
+   3. TABS & EXPANDERS
+   ========================================================================= */
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 6px !important;
+    background-color: #162032 !important;
+    padding: 6px !important;
+    border-radius: 10px !important;
+    border: 1px solid #28374d !important;
+    margin-bottom: 20px !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    padding: 9px 18px !important;
+    border-radius: 7px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: #94a3b8 !important;
+    -webkit-text-fill-color: #94a3b8 !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.15s ease !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background-color: #1e2c45 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-bottom: 2px solid #60a5fa !important;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* Expanders */
+div[data-testid="stExpander"] {
+    background-color: #162032 !important;
+    border: 1px solid #28374d !important;
+    border-radius: 10px !important;
+    margin-bottom: 18px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+    overflow: hidden !important;
+}
+
+div[data-testid="stExpander"] summary {
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    padding: 12px 16px !important;
+}
+
+div[data-testid="stExpander"] summary:hover {
+    color: #60a5fa !important;
+    -webkit-text-fill-color: #60a5fa !important;
+}
+
+div[data-testid="stExpander"] div[role="region"] {
+    padding: 12px 16px 16px 16px !important;
+    border-top: 1px solid #28374d !important;
+}
+
+/* =========================================================================
+   4. METRIC CARDS & HERO WELCOME BANNER
+   ========================================================================= */
+
+.siom-welcome-banner {
+    background: linear-gradient(135deg, #132247 0%, #0f172a 100%);
+    border: 1px solid #243553;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.siom-welcome-title {
+    font-size: 23px;
+    font-weight: 800;
+    color: #ffffff !important;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.siom-welcome-sub {
+    font-size: 13.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* Dashboard Metric Cards */
+.siom-metric-card {
+    background: linear-gradient(180deg, #172236 0%, #10192a 100%);
+    border: 1px solid #28374d;
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.siom-metric-card:hover {
+    transform: translateY(-2px);
+    border-color: #3b82f6;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.siom-metric-accent-blue { border-top: 4px solid #3b82f6; }
+.siom-metric-accent-green { border-top: 4px solid #10b981; }
+.siom-metric-accent-amber { border-top: 4px solid #f59e0b; }
+.siom-metric-accent-purple { border-top: 4px solid #8b5cf6; }
+.siom-metric-accent-red { border-top: 4px solid #ef4444; }
+
+.siom-metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.siom-metric-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.siom-metric-icon {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.siom-metric-val {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.siom-metric-sub {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* =========================================================================
+   5. PAGE HEADERS & FILTER PANELS
+   ========================================================================= */
+
+.siom-page-header {
+    margin-bottom: 22px;
+    border-bottom: 1px solid #28374d;
+    padding-bottom: 14px;
+}
+
+.siom-page-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.siom-page-subtitle {
+    font-size: 13.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.siom-section-header {
+    font-size: 16.5px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+}
+
+.siom-section-sub {
+    font-size: 12.5px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+/* Filter Panel Card */
+.siom-filter-panel {
+    background-color: #151e2e;
+    border: 1px solid #28374d;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================================
+   6. STATUS BADGES
+   ========================================================================= */
+
+.siom-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+}
+
+.siom-badge-green {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.siom-badge-amber {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.siom-badge-red {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.siom-badge-blue {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+.siom-badge-gray {
+    background-color: rgba(148, 163, 184, 0.15);
+    color: #cbd5e1;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+/* =========================================================================
+   7. BUTTONS (Primary, Secondary, Form Submit, Downloads)
+   ========================================================================= */
+
+button[data-testid="baseButton-primary"],
+button[kind="primary"],
+div[data-testid="stFormSubmitButton"] > button {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    border: 1px solid #3b82f6 !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    padding: 7px 16px !important;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35) !important;
+    transition: all 0.15s ease !important;
+}
+
+button[data-testid="baseButton-primary"]:hover,
+button[kind="primary"]:hover,
+div[data-testid="stFormSubmitButton"] > button:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+    border-color: #60a5fa !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.5) !important;
+    transform: translateY(-1px);
+}
+
+.main button[data-testid="baseButton-secondary"],
+.main button[kind="secondary"],
+.main div[data-testid="stDownloadButton"] > button {
+    background-color: #172033 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    color: #f1f5f9 !important;
+    -webkit-text-fill-color: #f1f5f9 !important;
+    padding: 7px 16px !important;
+    transition: all 0.15s ease !important;
+}
+
+.main button[data-testid="baseButton-secondary"]:hover,
+.main button[kind="secondary"]:hover,
+.main div[data-testid="stDownloadButton"] > button:hover {
+    border-color: #3b82f6 !important;
+    background-color: #1e2c45 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+    transform: translateY(-1px);
+}
+
+/* =========================================================================
+   8. SIDEBAR NAVIGATION & USER CARD
+   ========================================================================= */
+
+section[data-testid="stSidebar"] {
+    background-color: #0b1220 !important;
+    border-right: 1px solid #1e293b !important;
+}
+
+.siom-brand-header {
+    padding: 10px 4px 14px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 10px;
+}
+
+.siom-brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.siom-brand-icon {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+    flex-shrink: 0;
+}
+
+.siom-brand-name {
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.siom-brand-subtitle {
+    font-size: 11px;
+    color: #94a3b8 !important;
+    -webkit-text-fill-color: #94a3b8 !important;
+    margin-top: 2px;
+}
+
+.siom-nav-group-header,
+.siom-nav-section-title {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #94a3b8 !important;
+    -webkit-text-fill-color: #94a3b8 !important;
+    padding: 10px 8px 4px 8px !important;
+    margin-top: 8px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+.siom-sub-nav {
+    padding-left: 6px !important;
+    border-left: 2px solid rgba(255, 255, 255, 0.08) !important;
+    margin-left: 8px !important;
+    margin-bottom: 6px !important;
+}
+
+/* Sidebar Navigation Buttons */
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button {
+    width: 100% !important;
+    text-align: left !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 8px 12px !important;
+    border-radius: 7px !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    margin-bottom: 3px !important;
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    transition: all 0.15s ease !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button p,
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button span {
+    text-align: left !important;
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+    font-size: 13.5px !important;
+}
+
+/* Sidebar Inactive Button Hover */
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button:not([kind="primary"]):hover {
+    background-color: #172554 !important;
+    border-color: #1e3a8a !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button:not([kind="primary"]):hover p,
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button:not([kind="primary"]):hover span {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Sidebar Active Tab Button */
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button[data-testid="baseButton-primary"],
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button[kind="primary"] {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    border: 1px solid #3b82f6 !important;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4) !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button[data-testid="baseButton-primary"] p,
+section[data-testid="stSidebar"] div[data-testid="stButton"] > button[kind="primary"] p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* Bottom User Profile Card */
+.siom-user-card {
+    background: linear-gradient(180deg, #131d2e 0%, #0d1522 100%);
+    border: 1px solid #28374d;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+/* Auth Cards (First Run Setup & Login) */
+.siom-auth-card {
+    background: linear-gradient(180deg, #172236 0%, #0f172a 100%);
+    border: 1px solid #28374d;
+    border-radius: 14px;
+    padding: 32px 28px 24px 28px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    text-align: center;
+}
+
+.siom-auth-icon {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.siom-auth-title {
+    color: #ffffff !important;
+    margin: 0;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.siom-auth-subtitle {
+    color: #94a3b8;
+    font-size: 13.5px;
+    margin-top: 6px;
+}
+
+/* =========================================================================
+   9. DATAFRAMES, TABLES & EMPTY STATES
+   ========================================================================= */
+
+div[data-testid="stDataFrame"] {
+    border: 1px solid #28374d !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    background-color: #111827 !important;
+}
+
+/* Empty State */
+.siom-empty-state {
+    background-color: #151e2e;
+    border: 1px dashed #334155;
+    border-radius: 12px;
+    padding: 36px 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.siom-empty-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+    opacity: 0.85;
+}
+
+.siom-empty-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.siom-empty-hint {
+    font-size: 12.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* Streamlit Alerts / Info / Warning / Error */
+div[data-testid="stAlert"] {
+    border-radius: 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 12px 16px !important;
+    font-size: 13.5px !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #28374d;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
